@@ -1,9 +1,8 @@
-```
 fastapi
 uvicorn
 pydantic
 openai
-```
+
 Uji coba aplikasi secara lokal
 Pastikan Anda sudah install dependencies:
 
