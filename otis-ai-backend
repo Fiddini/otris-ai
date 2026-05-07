@@ -1,0 +1,44 @@
+```
+env.example
+```
+OPENAI_API_KEY=sk-proj-your-key-here
+```
+railway.json
+```
+{
+  "deploy": {
+    "startCommand": "uvicorn main:app --host 0.0.0.0 --port $PORT"
+  }
+}
+```
+UPLOAD KE GITHUB (Drag & Drop)
+```
+1. https://github.com/username/otris-ai-backend
+2. "Add file" → "Upload files"
+3. Drag 3 files: requirements.txt, .env.example, railway.json
+4. Commit: "Complete OTRIS AI backend"
+```
+REPO FINAL HARUS:
+```
+otris-ai-backend/
+├── main.py          ✅
+├── requirements.txt  ✅
+├── .env.example     ✅
+└── railway.json     ✅
+```
+RAILWAY DEPLOY (2 menit)
+```
+1. https://railway.app/new
+2. GitHub → otis-ai-backend → Deploy
+3. Variables → OPENAI_API_KEY = sk-proj-xxx
+4. WAIT → LIVE!
+```
+ANDROID URL
+```
+https://otris-ai-xxx.up.railway.app/api/chat
+```
+UPLOAD 3 FILES SEKARANG → Screenshot repo → Gw kasih Railway steps!
+```
+3 files drag → Commit → Railway → LIVE!
+```
+
