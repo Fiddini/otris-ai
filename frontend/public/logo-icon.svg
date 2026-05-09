@@ -1,0 +1,36 @@
+<svg width="64" height="64" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="blueGradientIcon" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0052CC" stop-opacity="1"/>
+    </linearGradient>
+    
+    <filter id="glowEffectIcon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softShadowIcon" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+    </filter>
+  </defs>
+
+  <!-- Glow background layer -->
+  <g opacity="0.1" filter="url(#glowEffectIcon)">
+    <path fill="#0052CC" d="M100,15 Q145,15 145,85 L145,145 Q145,185 100,185 Q55,185 55,145 L55,85 Q55,15 100,15 Z" />
+  </g>
+
+  <!-- Main icon shape -->
+  <g filter="url(#softShadowIcon)">
+    <path fill="url(#blueGradientIcon)" d="M100,20 Q140,20 140,80 L140,140 Q140,180 100,180 Q60,180 60,140 L60,80 Q60,20 100,20 Z" />
+    
+    <path fill="#FFFFFF" opacity="0.95" d="M100,45 Q122,62 122,110 Q122,135 100,135 Q78,135 78,110 Q78,62 100,45 Z" />
+    
+    <circle cx="100" cy="55" r="14" fill="#FFFFFF" opacity="0.9" />
+    
+    <circle cx="98" cy="53" r="5.5" fill="#FFFFFF" opacity="0.4" />
+  </g>
+</svg>
