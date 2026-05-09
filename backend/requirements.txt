@@ -1,5 +1,70 @@
-fastapi==0.136.1
-uvicorn[standard]==0.46.0
-openai==2.34.0
-python-dotenv==1.2.2
-pydantic==2.13.3
+fastapi
+uvicorn
+pydantic
+openai
+
+Uji coba aplikasi secara lokal
+Pastikan Anda sudah install dependencies:
+
+```
+pip install -r requirements.txt
+```
+Jalankan server FastAPI pada terminal:
+```
+uvicorn main:app --reload
+```
+Buka browser dan cek dokumentasi otomatis FastAPI di:
+
+```
+http://127.0.0.1:8000/docs
+```
+Coba endpoint POST /api/chat dengan payload contoh:
+
+```
+{
+  "message": "Halo, bagaimana kabarmu?"
+}
+```
+Pastikan response chat dari OpenAI muncul dengan benar.
+3. Siapkan environment variable API key OpenAI
+
+Pastikan variabel OPENAI_API_KEY sudah diset di environment Anda, contoh di Linux/macOS:
+
+```
+export OPENAI_API_KEY="your_real_openai_api_key"
+```
+setx OPENAI_API_KEY "your_real_openai_api_key"
+```
+4. Commit & push file requirements.txt (jika sudah dibuat) ke GitHub
+
+```
+git add requirements.txt
+git commit -m "Tambah file requirements.txt"
+git push origin main
+```
+5. Tambah file README.md agar dokumentasi lengkap
+Contoh isi README.md sederhana:
+Deskripsi singkat aplikasi
+Cara instalasi dependencies
+Cara menjalankan aplikasi
+Cara set OPENAI_API_KEY
+(Opsional) Deploy aplikasi ke cloud platform
+6. Jika ingin aplikasi dapat diakses publik, deploy ke platform seperti:
+
+Heroku
+Render
+Railway
+Fly.io
+Saya bisa bantu buatkan panduan deploy jika Anda mau.
+
+#Summary Perintah Git
+
+```
+git add requirements.txt README.md
+git commit -m "Tambah requirements dan dokumentasi"
+git push origin main
+```
+
+
+
+
