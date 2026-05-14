@@ -101,7 +101,7 @@ export default function ChatInterface() {
         ...prev,
         {
           role: "error",
-          content: `Maaf, terjadi kesalahan: ${error.message}. Silakan coba lagi.`,
+          content: `Maaf, koneksi terputus. Silakan coba lagi.`,
         },
       ]);
     } finally {

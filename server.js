@@ -63,14 +63,8 @@ app.post("/api/chat", async (req, res) => {
     const userMessage = messages[messages.length - 1].content;
     const mode = "belajar";
 
-    console.log("=== REQUEST MASUK ===");
-    console.log("Timestamp:", new Date().toISOString());
-    console.log("User message:", userMessage);
-    console.log("Mode:", mode);
-    console.log("Messages count:", messages.length);
-
-    // Panggil Groq API
-    console.log("🤖 Memanggil Groq API...");
+    // Minimal logging for production
+    console.log(`[${new Date().toISOString()}] Chat request: ${userMessage.substring(0, 50)}...`);
     const completion = await groq.chat.completions.create({
       model: "llama-3.3-70b-versatile",
       max_tokens: 200,
@@ -82,10 +76,8 @@ app.post("/api/chat", async (req, res) => {
     });
 
     const aiReply = completion.choices[0]?.message?.content || "Maaf, AI gak jawab.";
-    console.log("✅ Balasan AI:", aiReply);
 
     // Simpan ke table chats
-    console.log("💾 Menyimpan ke chats...");
     const { error: insertError } = await supabase.from("chats").insert({
       message: userMessage,
       mode: mode,
@@ -94,18 +86,13 @@ app.post("/api/chat", async (req, res) => {
     });
 
     if (insertError) {
-      console.error("❌ Error menyimpan chats:", insertError);
-    } else {
-      console.log("✅ Chat berhasil disimpan");
+      console.error("Error saving chat:", insertError.message);
     }
 
     res.json({ reply: aiReply });
   } catch (error) {
-    console.log("❌ ERROR API");
-    console.log("Error message:", error.message);
-    console.log("Error stack:", error.stack);
-    console.log("Full error:", error);
-    res.status(500).json({ error: "Server error: " + error.message });
+    console.error("API Error:", error.message);
+    res.status(500).json({ error: "Server error" });
   }
 });
 
@@ -121,14 +108,13 @@ app.get("/api/history", async (req, res) => {
       .limit(20);
 
     if (error) {
-      console.error("❌ Error mengambil history:", error);
+      console.error("History error:", error.message);
       return res.status(500).json({ error: error.message });
     }
 
-    console.log("✅ History berhasil diambil:", data?.length || 0, "chat");
     res.json({ history: data || [] });
   } catch (error) {
-    console.error("❌ Error GET history:", error);
+    console.error("History error:", error.message);
     res.status(500).json({ error: "Server error" });
   }
 });
