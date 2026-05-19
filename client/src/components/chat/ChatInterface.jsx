@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Bot, User, Sparkles, Loader2, AlertCircle, RefreshCw, PlusCircle, Trash2 } from "lucide-react";
+import { Bot, User, Sparkles, Loader2, AlertCircle, RefreshCw, PlusCircle, Trash2 } from "lucide-react";
 
 // Generate or get session ID with fallback
 const getSessionId = () => {
@@ -30,7 +30,7 @@ export default function ChatInterface() {
   const [isLoadingHistory, setIsLoadingHistory] = useState(true);
   const [error, setError] = useState(null);
   const [mode, setMode] = useState("belajar");
-  const [sessionId] = useState(getSessionId());
+  const [sessionId, setSessionId] = useState(getSessionId());
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -40,14 +40,6 @@ export default function ChatInterface() {
   useEffect(() => {
     scrollToBottom();
   }, [messages, error]);
-
-  // Validate and regenerate session on mount if needed
-  useEffect(() => {
-    const validSessionId = getSessionId();
-    if (validSessionId !== sessionId) {
-      setSessionId(validSessionId);
-    }
-  }, []);
 
   // Load history from Supabase on mount
   useEffect(() => {
@@ -86,7 +78,7 @@ export default function ChatInterface() {
     };
 
     loadHistory();
-  }, []);
+  }, [sessionId]);
 
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
