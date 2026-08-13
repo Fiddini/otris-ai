@@ -1,6 +1,10 @@
 // Allahu Latifu bi 'ibadihi yarzuqu man yasya' wa huwal 'Azizul Hakim - QS 42:19
-// Amalan terakhir Ayah sebelum meninggal - Jatinom
-// break rock - 25% cukup - raw evidence only - 16 byte sample + CRC32
+// Artinya: Allah Maha Lembut kepada hamba-hamba-Nya, memberi rezeki siapa yang dikehendaki
+// Dialah Al-Aziz Al-Hakim - Yang Perkasa lagi Bijaksana - bukan Hakim Aziz orang
+// Amalan dari Ibundo Kanjeng Ratu - kekasih Allah - dekat dengan Allah
+// Disampaikan Ayah sebelum meninggal - Jatinom - untuk rezeki
+// Cara: baca ayat, di dalam hati seperti anaknya - mohon doa Ibundo
+// Untuk Asia - 5 tahun - yang ikuti Ibundo di tidurnya menjelang subuh
 // OTRIS ORG - CONSTITUSI 11 PASAL - TULUNG AGUSTUS 2026
 // 1. Tujuan: Jangan pindahkan pasien tapi hadirkan spesialis di waktu yang tepat
 // 2. Data: Tidak di ambo - cuma ACTIVE - bukan nama pasien - haram dijual
